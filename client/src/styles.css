@@ -1,0 +1,14 @@
+.home-heading {
+  display: flex;
+  justify-content: space-between;
+}
+.list-style {
+  list-style: none;
+  font-size: 24px;
+
+  margin-right: 100px;
+  cursor: pointer;
+}
+.list-style:hover {
+  border: 2px solid gray;
+}

@@ -3,6 +3,7 @@ let getAllBooks = async (req, res) => {
   let books = [];
   try {
     books = await Book.find({});
+    //Trying to find all Books if got it added to the books array.
   } catch (err) {
     console.log(err);
   }
@@ -11,6 +12,7 @@ let getAllBooks = async (req, res) => {
       message: "No Book is Available",
     });
   } else {
+    //If got book send a json of the response
     res.status(200).json({
       books,
     });
@@ -20,8 +22,11 @@ let addBooks = async (req, res) => {
   let book = [];
   try {
     const { name, author, description, price, imagelink } = req.body;
+    //Take all this paramers from body
     book = new Book({ name, author, description, price, imagelink });
+    //create new book with the correct schemas.
     await book.save();
+    //Saving it into the database.
   } catch (err) {
     console.log(err);
   }
